@@ -15,7 +15,11 @@ class linkedList
  public:
   linkedList();
   void insertAtEnd(int);
-  void print();
+  void insertAtFront(int);
+
+  bool search(int) const;
+
+  void print() const;
 
  private:
   node *head;
@@ -24,7 +28,9 @@ class linkedList
 
 };
 
-
+//git add .
+//git commit -m "[msg]"
+//git push
 
 
 
