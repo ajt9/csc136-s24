@@ -17,4 +17,18 @@ int main()
 
   cout << myList.search(9) << endl;
   
+  myList.deleteNode(1);
+  myList.deleteNode(9);
+  myList.print();
+
+  linkedList newList(myList);
+  newList.print();
+
+
+  // adding more lists segfaults
+  // linkedList List1;
+  // linkedList List2(List1);
+
+  // List2.print();
+  
 }

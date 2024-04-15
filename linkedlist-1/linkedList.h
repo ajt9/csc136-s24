@@ -14,8 +14,11 @@ class linkedList
 {
  public:
   linkedList();
+  linkedList(const linkedList&);
+
   void insertAtEnd(int);
   void insertAtFront(int);
+  void deleteNode(int);
 
   bool search(int) const;
 
