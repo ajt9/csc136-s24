@@ -102,8 +102,30 @@ void linkedList::deleteNode(int x) {
       }
       return;
   } //other part is deleted
+}
 
+ const linkedList& linkedList::operator=(const linkedList& other) {
+  if (this != &other) {
+    destroy();
 
+    if (other.head == nullptr) {
+      count = 0;
+      head = nullptr;
+      tail = nullptr;
+    }
+    else {
+        node* head = new node;
+        tail = nullptr;
+        count = 0;
+        node* temp = other.head;
+
+        while (temp != nullptr) {
+          insertAtEnd(temp->num);
+          temp = temp->next;
+        }
+    }
+  }
+  return *this;
 }
 
 bool linkedList::search(int x) const {
@@ -133,7 +155,21 @@ void linkedList::print() const {
   cout << current->num;
   cout << endl;
 }
+void linkedList::destroy() {
+  node* temp;
 
+  while (head != nullptr) {
+    temp = head;
+    head = head->next;
+    delete temp;
+  } 
+
+  // delete head;
+}
+
+linkedList::~linkedList() {
+  destroy();
+}
 
 
 

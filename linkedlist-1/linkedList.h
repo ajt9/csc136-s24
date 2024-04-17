@@ -20,9 +20,14 @@ class linkedList
   void insertAtFront(int);
   void deleteNode(int);
 
+  const linkedList& operator=(const linkedList& other);
+
   bool search(int) const;
 
   void print() const;
+  void destroy();
+
+  ~linkedList();
 
  private:
   node *head;
